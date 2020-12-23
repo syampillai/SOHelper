@@ -215,7 +215,7 @@
                         <artifactId>maven-jar-plugin</artifactId>
                         <version>3.1.2</version>
                         <configuration>
-                            <!-- Generated file that shouldn't be included in add-ons -->
+                            <!-- VAADIN files that shouldn't be included in add-ons -->
                             <excludes>
                                 <exclude>META-INF/VAADIN/</exclude>
                             </excludes>
