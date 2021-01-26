@@ -17,8 +17,8 @@
 package com.storedobject.helper;
 
 import com.vaadin.flow.component.ClientCallable;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.DetachEvent;
-import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.page.PendingJavaScriptResult;
 import com.vaadin.flow.function.SerializableConsumer;
 import elemental.json.JsonValue;
@@ -31,17 +31,15 @@ import java.util.*;
  * Javascript. Normally, execution of Javascript is possible only when the front-end part of the component is
  * attached to the DOM tree and in a ready-state. Vaadin makes sure that the JS commands are executed only when the
  * component is attached. However, there is no guarantee that the component is still in a ready state at that time
- * becasue of the complexity of the logic in the component.</p>
+ * because of the complexity of the logic in the component.</p>
  * <p>This class caches all the commands till the front-end is ready to receive commands.
  * The LitElement (client-side) implementation should invoke the server-side {@link #ready()} method from the
  * connectedCallback() { super.connectedCallback(); this.$server.ready(); } or frm any other place when the element is
  * fully ready.</p>
- * <p>Since this extends Vaadin's {@link LitTemplate}, all features provided by Vaadin's templating mechanism are also
- * available.</p>
  *
  * @author Syam
  */
-public abstract class LitComponent extends LitTemplate {
+public abstract class LitComponent extends Component {
 
     private final List<JSFunction> functions = new ArrayList<>();
     private volatile boolean ready = false;
