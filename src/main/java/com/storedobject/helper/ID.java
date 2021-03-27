@@ -51,7 +51,7 @@ public class ID {
      * @param component Component for which id needs to be set.
      */
     public static void set(Component component) {
-        if(!component.getId().isPresent()) {
+        if(component.getId().isEmpty()) {
             component.setId("so" + newID());
         }
     }
