@@ -17,7 +17,6 @@
 package com.storedobject.helper;
 
 import com.vaadin.flow.component.ClientCallable;
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.DetachEvent;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.page.PendingJavaScriptResult;
@@ -36,7 +35,8 @@ import java.util.*;
  * <p>This class caches all the commands till the front-end is ready to receive commands.
  * The LitElement (client-side) implementation should invoke the server-side {@link #ready()} method from the
  * connectedCallback() { super.connectedCallback(); this.$server.ready(); } or from any other suitable place when the
- * element is fully ready to receive updates from the server side.</p>
+ * element is fully ready to receive updates from the server side. If you are using TS instead of JS, please make sure
+ * that you cast the "this" as "any" to comply with the strong typing of TS - (this as any).$server.ready();</p>
  * <p>Since this component is extended from Vaadin's {@link LitTemplate}, it has all the features supported by
  * that class too.</p>
  *
