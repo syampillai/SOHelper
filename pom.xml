@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~  Copyright 2019-2020 Syam Pillai
+  ~  Copyright 2019-2025 Syam Pillai
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
   ~  You may obtain a copy of the License at
   ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~      https://www.apache.org/licenses/LICENSE-2.0
   ~
   ~  Unless required by applicable law or agreed to in writing, software
   ~  distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,17 +21,22 @@
 
     <groupId>com.storedobject.helper</groupId>
     <artifactId>so-helper</artifactId>
-    <version>3.0.0</version>
+    <version>4.0.0</version>
     <name>SO Helper</name>
     <description>Helper classes for Vaadin related development</description>
 
     <properties>
-        <vaadin.version>23.0.9</vaadin.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <vaadin.version>24.6.5</vaadin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <jetty.version>9.4.44.v20210927</jetty.version>
+        <java-version>17</java-version>
+        <maven.compiler.release>${java-version}</maven.compiler.release>
+        <maven-compiler-plugin-version>3.12.1</maven-compiler-plugin-version>
+        <maven-jar-plugin-version>3.3.0</maven-jar-plugin-version>
+        <maven-resources-plugin-version>3.3.1</maven-resources-plugin-version>
+        <maven-javadoc-plugin-version>3.6.3</maven-javadoc-plugin-version>
+        <maven-source-plugin-version>3.3.0</maven-source-plugin-version>
+        <maven-assembly-plugin-version>3.6.0</maven-assembly-plugin-version>
     </properties>
 
     <organization>
@@ -41,7 +46,7 @@
     <licenses>
         <license>
             <name>Apache 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -61,7 +66,7 @@
     <repositories>
         <repository>
             <id>Vaadin pre-release repository</id>
-            <url>http://maven.vaadin.com/vaadin-prereleases/</url>
+            <url>https://maven.vaadin.com/vaadin-prereleases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -74,7 +79,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>Vaadin pre-release repository</id>
-            <url>http://maven.vaadin.com/vaadin-prereleases/</url>
+            <url>https://maven.vaadin.com/vaadin-prereleases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -101,7 +106,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>${maven-jar-plugin-version}</version>
                 <configuration>
                     <archive>
                         <index>true</index>
@@ -133,20 +138,6 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
-                <configuration>
-                    <scanIntervalSeconds>-1</scanIntervalSeconds>
-                    <!-- Use test scope because the UI/demo classes are in
-                        the test package. -->
-                    <useTestScope>true</useTestScope>
-                    <supportedPackagings>
-                        <supportedPackaging>jar</supportedPackaging>
-                    </supportedPackagings>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -158,7 +149,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>3.3.0</version>
+                        <version>${maven-assembly-plugin-version}</version>
                         <configuration>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
@@ -177,7 +168,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.2.1</version>
+                        <version>${maven-source-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -191,7 +182,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.3.2</version>
+                        <version>${maven-javadoc-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -213,7 +204,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
-                        <version>3.2.2</version>
+                        <version>${maven-jar-plugin-version}</version>
                         <configuration>
                             <!-- VAADIN files that shouldn't be included in add-ons -->
                             <excludes>
