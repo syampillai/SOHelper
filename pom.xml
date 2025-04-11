@@ -26,17 +26,17 @@
     <description>Helper classes for Vaadin related development</description>
 
     <properties>
-        <vaadin.version>24.6.6</vaadin.version>
+        <vaadin.version>24.7.1</vaadin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java-version>17</java-version>
-        <maven.compiler.release>${java-version}</maven.compiler.release>
-        <maven-compiler-plugin-version>3.12.1</maven-compiler-plugin-version>
-        <maven-jar-plugin-version>3.3.0</maven-jar-plugin-version>
+        <java-version>21</java-version>
+        <maven.compiler.release>21</maven.compiler.release>
+        <maven-compiler-plugin-version>3.14.0</maven-compiler-plugin-version>
+        <maven-jar-plugin-version>3.4.2</maven-jar-plugin-version>
         <maven-resources-plugin-version>3.3.1</maven-resources-plugin-version>
-        <maven-javadoc-plugin-version>3.6.3</maven-javadoc-plugin-version>
-        <maven-source-plugin-version>3.3.0</maven-source-plugin-version>
-        <maven-assembly-plugin-version>3.6.0</maven-assembly-plugin-version>
+        <maven-javadoc-plugin-version>3.11.2</maven-javadoc-plugin-version>
+        <maven-source-plugin-version>3.3.1</maven-source-plugin-version>
+        <maven-assembly-plugin-version>3.7.1</maven-assembly-plugin-version>
     </properties>
 
     <organization>
