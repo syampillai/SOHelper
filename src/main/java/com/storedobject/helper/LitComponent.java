@@ -52,7 +52,7 @@ public abstract class LitComponent extends LitTemplate {
         synchronized (functions) {
             JSFunction function;
             while (!functions.isEmpty()) {
-                function = functions.remove(0);
+                function = functions.removeFirst();
                 JSResult r = (JSResult) function.result;
                 PendingJavaScriptResult pr = exec(function.function, function.parameters);
                 pr.then(r.successConsumer, r.failureConsumer);
