@@ -43,4 +43,11 @@
         </license>
     </licenses>
 
+    <repositories>
+        <repository>
+            <id>so-maven</id>
+            <url>https://storedobject.com/maven</url>
+        </repository>
+    </repositories>
+
 </project>
