@@ -8,6 +8,6 @@ ln -s ../../../../../../frontend/so .
 cd ~/IdeaProjects/SOHelper
 mvn clean install -Pdirectory
 mkdir -p zipTarget
-rm -f zipTarget/*.zip
+rm -fr zipTarget/*
 cp target/*.zip zipTarget
 cd
