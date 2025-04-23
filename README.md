@@ -7,7 +7,7 @@ A set of helper classes for Vaadin related development. It is currently being us
 Include this in the dependencies section of your POM file:
 ```xml
   <dependency>
-    <groupId>com.vaadin.addons.so</groupId>
+    <groupId>org.vaadin.addons.so</groupId>
     <artifactId>so-helper</artifactId>
     <version>5.0.0</version>
   </dependency>
