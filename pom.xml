@@ -25,6 +25,7 @@
         <version>24.7.2</version>
     </parent>
 
+    <groupId>com.vaadin.addons.so</groupId>
     <artifactId>so-helper</artifactId>
     <version>5.0.0</version>
     <name>SO Helper</name>
